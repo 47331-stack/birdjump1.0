@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bird Jump</title>
+
+    <!-- Fonte Cartoonesca estilo Logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas Principal em Tela Cheia -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Logo e HUD da tela inicial -->
+    <header class="top-bar" aria-label="Informações do jogador">
+        <img class="brand-logo" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202026-10-13%20171504-Photoroom-FfrmCnjpoT179Ciee5JK4D8B2zLUh1.png" alt="BirdJump" />
+        <div class="currency-panel" aria-label="Progresso do jogador">
+            <div class="stat-card">
+                <span>RECORDE</span>
+                <strong id="bestScoreValue">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>DIAMANTES</span>
+                <strong id="diamondValue">1000</strong>
+            </div>
+        </div>
+        <button id="shopButton" class="image-button shop-button" type="button" aria-label="Abrir loja">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202026-10-13%20183545-Photoroom-qmzLug0PP0gJT2aCQ0e5SLngjpz2rA.png" alt="Loja" />
+        </button>
+    </header>
+
+    <!-- Overlay de Interface UI -->
+    <div id="uiOverlay" class="ui-layer">
+        <div id="menuCard" class="menu-card">
+            <div id="menuSubtitle" class="menu-subtitle">Clique ou aperte Espaço para Voar!</div>
+            <button id="startButton" class="image-button start-button" type="button" aria-label="Começar jogo"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202026-10-13%20183541-Photoroom-cJPsZAcxrhE42Mj9HFqAMgStTG3Mn4.png" alt="Começar" /></button>
+        </div>
+    </div>
+
+    <div id="shopModal" class="shop-modal" aria-hidden="true">
+        <div class="shop-card" role="dialog" aria-modal="true" aria-labelledby="shopTitle">
+            <button id="closeShopButton" class="close-button" type="button" aria-label="Fechar loja">×</button>
+            <h2 id="shopTitle">Loja</h2>
+            <div class="skin-preview">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P%C3%A1ssaro%20Lend%C3%A1rio%20Dourado%20El%C3%A9trico-Photoroom-zYpRnNBC1UBpM0UnpjhLPBcNYZcpCD.png" alt="Mega Bird dourado elétrico com armadura e raios" />
+            </div>
+            <h3>Mega Bird</h3>
+            <p>Uma armadura poderosa cercada de raios.</p>
+            <button id="buyButton" class="cartoon-btn shop-buy-button" type="button">COMPRAR · 999 DIAMANTES</button>
+            <button id="equipButton" class="cartoon-btn shop-equip-button" type="button" disabled>EQUIPAR MEGA BIRD</button>
+            <span id="shopMessage" class="shop-message" role="status"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
